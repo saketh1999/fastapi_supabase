@@ -1,10 +1,8 @@
 Building a FastAPI API with Supabase: A Detailed Guide
 This document summarizes the steps and file structure for building a FastAPI API that interacts with a Supabase database.
 
-1. Recommended File Structure
+Recommended File Structure
 This structure promotes organization, scalability, and maintainability:
-
-Markdown
 
 project-root/
 ├── app/
@@ -16,8 +14,8 @@ project-root/
 │   │   └── ...
 │   ├── core/
 │   │   ├── __init__.py
-│   │   ├── config.py       # Application settings, environment variables
-│   │   └── events.py       # Startup/shutdown events
+│   │   ├── config.py      # Application settings, environment variables
+│   │   └── events.py      # Startup/shutdown events
 │   ├── db/
 │   │   ├── __init__.py
 │   │   └── supabase_client.py # Supabase client initialization
@@ -26,7 +24,7 @@ project-root/
 │   │   └── example_middleware.py
 │   ├── models/
 │   │   ├── __init__.py
-│   │   ├── item.py         # Data models using Pydantic
+│   │   ├── item.py        # Data models using Pydantic
 │   │   ├── user.py
 │   │   └── ...
 │   ├── services/
@@ -39,7 +37,7 @@ project-root/
 │       └── helper_functions.py
 ├── config/
 │   └── __init__.py
-│   └── settings.py         # Structured settings management (optional)
+│   └── settings.py      # Structured settings management (optional)
 ├── tests/
 │   ├── __init__.py
 │   ├── api/
@@ -48,13 +46,13 @@ project-root/
 │   └── services/
 │       ├── test_services_1.py
 │       └── test_services_2.py
-├── .env                     # Environment variables (local - git ignored)
-├── .gitignore               # Git ignore file
-├── main.py                  # FastAPI application entry point
-├── README.md                # Project documentation
-├── requirements.txt         # Project dependencies
-└── dockerfile               # (Optional) Dockerfile for containerization
-└── docker-compose.yml       # (Optional) Docker Compose configuration
+├── .env                 # Environment variables (local - git ignored)
+├── .gitignore           # Git ignore file
+├── main.py              # FastAPI application entry point
+├── README.md            # Project documentation
+├── requirements.txt     # Project dependencies
+├── dockerfile           # (Optional) Dockerfile for containerization
+└── docker-compose.yml   # (Optional) Docker Compose configuration
 Explanation of Key Files and Folders:
 app/api/: Contains API endpoint definitions (using FastAPI routers), organized by resource (e.g., users.py, items.py).
 app/core/: Houses core application logic like configurations (config.py) and startup/shutdown events (events.py).
@@ -77,8 +75,6 @@ Create Project Files & Directories: Use mkdir and touch commands as shown in the
 Initialize .gitignore: Add venv/, __pycache__/, .env, *.pyc, *.pyo to .gitignore.
 Phase 2: Install Dependencies
 Populate requirements.txt: Add the following:
-Plaintext
-
 fastapi
 uvicorn[standard]
 supabase
@@ -86,14 +82,14 @@ pydantic
 python-dotenv
 Install Dependencies: pip install -r requirements.txt
 Phase 3: Supabase Setup and Configuration
-Create Supabase Project: Go to supabase.com and create a project. Get your Project URL and anon public key from Project Settings -> API.
+Create Supabase Project: Go to supabase.com and create a project.
+Get your Project URL and anon public key: From Project Settings -> API.
 Configure .env: Create a .env file and add:
-Code snippet
-
 SUPABASE_URL="YOUR_SUPABASE_URL"
 SUPABASE_ANON_KEY="YOUR_SUPABASE_ANON_KEY"
 (Replace placeholders with your actual Supabase credentials)
-Load Environment Variables in config.py:
+
+Load Environment Variables in config.py: (Python code would go here)
 Python
 
 # app/core/config.py
