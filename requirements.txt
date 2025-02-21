@@ -1,0 +1,7 @@
+#This is a simple requirements.txt file for the project
+fastapi
+uvicorn[standard]  # For running the FastAPI app
+supabase
+pydantic
+python-dotenv
+pydantic-settings
